@@ -19,7 +19,6 @@ public class ProductController {
     public List<Product> getProducts() {
         return products;
     }
-
     @PostMapping
     public Product saveRecord(@RequestBody Product product) {
         products.add(product);

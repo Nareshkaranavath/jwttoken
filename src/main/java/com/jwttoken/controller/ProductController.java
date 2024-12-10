@@ -1,5 +1,7 @@
 package com.jwttoken.controller;
 
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,5 +24,9 @@ public class ProductController {
     public Product saveRecord(@RequestBody Product product) {
         products.add(product);
         return product; // Returning the added product.
+    }
+    @GetMapping ("/csrf")
+    public CsrfToken getToken(HttpServletRequest request) {
+        return (CsrfToken) request.getAttribute("org.springframework.security.web.csrf.CsrfToken");
     }
 }

@@ -6,13 +6,14 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name ="user_register")
-public class UserDetails {
+public class CustomUser {
     @Id
     private Integer id;
     private String userName;
     private String pwd;
 
     public Integer getId() {
+
         return id;
     }
     public void setId(Integer id) {

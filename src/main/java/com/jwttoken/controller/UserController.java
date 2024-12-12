@@ -24,7 +24,6 @@ public class UserController {
     public CustomUser register(@RequestBody CustomUser user) {
         //return userRepository.save(user);
         return customUserService.register(user);
-
     }
     @PostMapping("/login")
     public String login(@RequestBody CustomUser userLogin) {
@@ -39,5 +38,4 @@ public class UserController {
         }
         return "Login failed";
     }
-
 }
